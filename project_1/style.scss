@@ -1,6 +1,8 @@
 $Montserrat: 'Montserrat', sans-serif;
 $Merriweather:'Merriweather', sans-serif;
 $Raleway: 'Raleway',sans-serif;
+$YuGothic: 'YuGothic',sans-serif;
+$MyriadPro: 'MyriadPro',sans-serif;
 $white_1: #eff0f2;
 $white_2: #f0fff0;
 $white_4: #edefef;
@@ -13,6 +15,7 @@ $grey_2: #696969;
 $grey_3: #505050;
 $grey_4: #777879;
 $grey_5: #69696a;
+$grey_6: #262b2e;
 $bluelight_1: #aeece8;
 $bluelight_2: #77efe5;
 
@@ -38,17 +41,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1140px;
     margin: 0 auto;
 }
     
 .header {
-        width: 100%;
-        height: auto;
-        position: relative;
-        background-color: $white_1;
-        padding-top: 65px;
-        color: $grey_1;
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: $white_1;
+    padding-top: 65px;
+    color: $grey_1;
         
     &__logo {
         font-size: 16px;
@@ -61,53 +64,54 @@ h1, h2, h3, h4, h5, h6 {
 
         span {
             color: $bluelight_2;
-            }  
-        }
+        }  
+    }
 }
 
 .intro {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: calc(100vh - 106px);
-        background-color: $white_1;
-        color: $grey_1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 106px);
+    background-color: $white_1;
+    color: $grey_1;
 
     &__inner {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
 
-            img {
-                position: absolute;
-                display: block;
-                right: 80px;
-                bottom: -130px;
-            }
-        //button            
-            .btn {
-                display: inline-block;
-                vertical-align: top;
-                text-transform: uppercase;
-                letter-spacing: 3px;
-                padding: 8px 45px;
-                font-size: 18px;
-                font-weight: regular;
-                text-decoration: none;
-                border: 3px solid $grey_4;
-                color: $grey_5;
-                transition: background .1s linear, color .1s linear;
+        img {
+        position: absolute;
+        display: block;
+        right: 80px;
+        bottom: -130px;
+        }
+            
+        .btn {
+            display: inline-block;
+            vertical-align: top;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding: 8px 45px;
+            font-size: 18px;
+            font-weight: regular;
+            text-decoration: none;
+            border: 3px solid $grey_4;
+            color: $grey_5;
+            transition: background .1s linear, color .1s linear;
 
             &:hover {
-                    background-color: $grey_2;
-                    color: $white_2;
+                background-color: $grey_2;
+                color: $white_2;
                 }
                 
             }
             
-        } 
-    &__title {
+        }
+         
+        &__title {
         font-size: 45px;
         font-weight: bold;
         text-transform: uppercase;
@@ -128,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: $white_3;
     padding: 130px 0;  
 
-    &__header{
+    &__header {
         width: 100%;
         height: auto;
         text-align: center;
@@ -158,16 +162,26 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(1, 1fr);
         gap: 1em;
-        justify-items: center;
+        justify-items: center;  
     }  
     
-    &__images {
+    &__post {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 390px;
         height: 480px;
+        overflow: hidden;
         box-shadow: 0px 0px 15px 10px $white_4;
-       
-    }
 
+        img {
+            width: auto;
+            height: 100%; 
+            position: relative;
+            left: 60px;
+        }
+    }
+    
     &__content {
         width: 480px;
         height: auto;
@@ -180,11 +194,19 @@ h1, h2, h3, h4, h5, h6 {
         color: $grey_4;
     } 
 
-    &__title-2 {
+    &__title-1 {
         text-transform: uppercase;
         color: $grey_1;
         font-family: $Raleway; 
         font-size: 20px;
+        font-weight: regular;
+    }
+
+    &__title-2 {
+        text-transform: uppercase;
+        color: $grey_1;
+        font-family: $Raleway; 
+        font-size: 17px;
         font-weight: regular;
     }
        
@@ -217,59 +239,29 @@ h1, h2, h3, h4, h5, h6 {
         color: $grey_4; 
     }
 
-    &__content {
-        display: grid;
+    &__gallery {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
         width: 100%;
-        height: auto;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1em;
-        align-content: center;
+        
     }
     
-    &__images-1 {
-        max-width: 370px;
-        max-height: 360px; 
-        align-self: stretch; 
-        justify-self: end;   
-    }
-
-    &__images-2 {
-        max-width: 370px;
-        max-height: 360px; 
-        justify-self: center;  
-    }
-
-    &__images-3 {
-        max-width: 370px;
-        max-height: 360px; 
-        justify-self: stretch;
-    }
-
-    &__images-4 {
-        max-width: 370px;
-        max-height: 360px; 
-        align-self: stretch;
-        justify-self: end;   
-    }
-    
-    &__images-5 {
-        max-width: 370px;
-        max-height: 360px; 
-        justify-self: center;
-    }
-
-    &__images-6 {
-        max-width: 370px;
-        max-height: 360px; 
-        align-self: stretch; 
-    }
-
-   
+    &__wrapper {
+        width: 32%;
+        height: 360px;
+        margin-right: 2%;
+        margin-bottom: 20px;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }     
 }
 
 .small-team {
-    background-color: $bluelight_2;
+    background-color: $white_6;
     padding: 130px 0;
 
     &__header {
@@ -295,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
         color: $grey_4; 
     }
 
-    &__content {
+    &__images {
         display: grid;
         width: 100%;
         height: auto;
@@ -304,16 +296,44 @@ h1, h2, h3, h4, h5, h6 {
         gap: 1em;
     }
 
-    &__images {
-        max-width: 370px;
-        max-height: 440px; 
-       // align-self: stretch; 
-        justify-self: center;  
+    &__img {
+        width: 100%;
+        height: 100%; 
+    }
+}
+
+.footer {
+    
+
+    &__footer-up {
+        width: 100%;
+        height: 700px;
+        background: url('../images/forest2.jpg') 0 0 no-repeat;
+        background-size: 100% auto; 
+        
+    }
+
+    &__footer-down {
+        height: 316px;
+        background-color: $grey_6;
+    }
+
+    &__title {
+        font-size: 17px;
+        font-weight: regular;
+        font-family: $MyriadPro;
+        text-transform: uppercase;
+        color: $white_4;
+        padding-top: 90px;
+        text-align: center;
+        letter-spacing: 3px;
+    }
+
+    &__icons {
+     
+        margin-left: auto;
+        margin-right: auto
     }
 
 }
-.footer {
-    width: 100%;
-    height: auto;
 
-}
